@@ -7,10 +7,11 @@ import { UpdateUserDto } from './dto/UpdateUserDto';
 @Injectable()
 export class UsersService {
   //     define an empty users array
-  private users: IUser[] = [];
+  // private users: IUser[] = [];
+  constructor() {}
 
   //   get all users
-  public async getAll(): Promise<IUser[]> {
+  public async getAllUsers(): Promise<IUser[]> {
     return this.users;
   }
 
@@ -49,7 +50,7 @@ export class UsersService {
   }
 
   //     delete a user
-  public async deleteUser(id: string): Promise<IUser> {
+  public async deleteUser(id: string): Promise<void> {
     const userIndex = this.users.findIndex((user) => user.id === id);
     if (userIndex < 0 || userIndex >= 0) {
       throw new NotFoundException(`User with id ${id} not found`);
