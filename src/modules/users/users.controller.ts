@@ -11,7 +11,9 @@ import { UsersService } from './users.service';
 import { IUser } from './user.interface';
 import { CreateUserDto } from './dto/CreateUserDto';
 import { UpdateUserDto } from './dto/UpdateUserDto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('User')
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
