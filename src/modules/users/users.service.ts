@@ -17,11 +17,20 @@ export class UsersService {
     return this.userRepository.find();
   }
 
-  //     get a single user
+  //     get a single user by ID
   public async getUserById(id: string): Promise<User> {
     const user = this.userRepository.findOne({ where: { id } });
     if (!user) {
       throw new NotFoundException(`User with id ${id} not found`);
+    }
+    return user;
+  }
+
+  //     get a single user by EMAIL
+  public async getUserByEmail(email: string): Promise<User> {
+    const user = this.userRepository.findOne({ where: { email } });
+    if (!user) {
+      throw new NotFoundException(`User with id ${email} not found`);
     }
     return user;
   }
