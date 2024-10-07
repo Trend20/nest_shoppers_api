@@ -11,7 +11,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   // attaches cookies to request object
   app.use(cookieParser());
-  // applies security hardening settings. using defaults: https://www.npmjs.com/package/helmet
+  // enforce more security
   app.use(helmet());
   app.setGlobalPrefix('api/v1');
   setupSwagger(app);

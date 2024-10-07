@@ -1,5 +1,5 @@
 declare namespace NodeJS {
-  interface ProcessEnv {
+  export interface ProcessEnv {
     readonly NODE_ENV: 'development' | 'production' | 'test';
     readonly PORT: string;
     readonly TYPEORM_CONNECTION: string;

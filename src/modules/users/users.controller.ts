@@ -8,9 +8,9 @@ import {
   Put,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { IUser } from './user.interface';
-import { CreateUserDto } from './dto/CreateUserDto';
-import { UpdateUserDto } from './dto/UpdateUserDto';
+import { IUser } from './interface/user.interface';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('User')
